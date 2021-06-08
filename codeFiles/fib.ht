@@ -1,0 +1,76 @@
+define function void printint(int n);
+define function void printstr(string s);
+define function void printintfile(string a, int b);
+#define function void printstrfile(string c, string d);
+
+function int FibRecursive(int n)
+{
+    if(n == 0)
+    {
+        return 0;
+    }
+    if(n == 1)
+    {
+        return 1;
+    }
+    return FibRecursive(n - 1) + FibRecursive(n - 2);
+}
+
+function int FibIterative(int n)
+{
+    int ppn = 0;
+    int pn = 0;
+    int current = 1;
+
+    for(int i = 1; i < n; i = i + 1)
+    {
+        ppn = pn;
+        pn = current;
+        current = ppn + pn;
+    }
+
+    return current;
+}
+
+function void Unique(int a, int b)
+{
+    int x = a;
+    while(a <= x < b)
+    {
+        printint(x);
+        x = x + 1;
+    }
+    return;
+}
+
+function void Unique2()
+{
+    int i = 10;
+    int j = 15;
+    int a = 5;
+    if(j >= i < a)
+    {
+        string ats = "true";
+        printstr(ats);
+    }
+    else
+    {
+        string ats2 = "false";
+        printstr(ats2);
+    }
+
+    return;
+}
+
+function void start(){
+    #int recursive = FibRecursive(7);
+    #printint(recursive);
+
+    #int iterative = FibIterative(7);
+    #printint(iterative);
+
+    #Unique(0,10);
+    Unique2();
+
+    return;
+}
